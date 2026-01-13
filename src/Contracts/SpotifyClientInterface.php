@@ -4,17 +4,17 @@ namespace Modelesque\Api\Contracts;
 
 use Illuminate\Http\Client\ConnectionException;
 use Modelesque\Api\SpotifyClient;
-use Modelesque\ApiTokenManager\Contracts\PKCEAuthCodeFlowInterface;
+use Modelesque\ApiTokenManager\Contracts\AuthCodeTokenProviderInterface;
 use Modelesque\ApiTokenManager\Exceptions\AuthCodeFlowRequiredException;
-use Modelesque\ApiTokenManager\Traits\HandlesPKCEAuthCodeFlow;
+use Modelesque\ApiTokenManager\Traits\HandlesAuthCodeFlow;
 use Modelesque\App\Requests\AlbumRequests;
 use Modelesque\App\Requests\ArtistRequests;
 use Modelesque\App\Requests\PlaylistRequests;
 use Modelesque\App\Requests\TrackRequests;
 
 /**
- * @method PKCEAuthCodeFlowInterface pkce()
- * @mixin HandlesPKCEAuthCodeFlow
+ * @method AuthCodeTokenProviderInterface pkce()
+ * @mixin HandlesAuthCodeFlow
  * @see SpotifyClient
  */
 interface SpotifyClientInterface
