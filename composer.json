@@ -1,0 +1,60 @@
+{
+  "name": "modelesque/laravel-web-api-spotify",
+  "description": "Make REST requests to Spotify's Web API in a Laravel app.",
+  "version": "1.0.0",
+  "keywords": ["php", "laravel", "package", "library"],
+  "license": "MIT",
+  "type": "library",
+  "require": {
+    "php": "^8.1",
+    "illuminate/database": "^12.46",
+    "illuminate/http": "^12.46",
+    "illuminate/support": "^12.46",
+    "modelesque/laravel-api-token-manager": "^1.0"
+  },
+  "require-dev": {
+    "barryvdh/laravel-ide-helper": "^3.6",
+    "mockery/mockery": "^1.6",
+    "pestphp/pest": "^4.3"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../laravel-api-token-manager",
+      "options": {
+        "symlink": true
+      }
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Modelesque\\Api\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Modelesque\\Api\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modelesque\\Api\\SpotifyServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "authors": [
+    {
+      "name": "Ryan White",
+      "email": "modelesquebiz@gmail.com"
+    }
+  ]
+}
