@@ -5,7 +5,7 @@ namespace Modelesque\Api\Contracts;
 use Illuminate\Http\Client\ConnectionException;
 use Modelesque\Api\SpotifyClient;
 use Modelesque\ApiTokenManager\Contracts\PKCEAuthCodeFlowInterface;
-use Modelesque\ApiTokenManager\Exceptions\PKCEAuthorizationRequiredException;
+use Modelesque\ApiTokenManager\Exceptions\AuthCodeFlowRequiredException;
 use Modelesque\ApiTokenManager\Traits\HandlesPKCEAuthCodeFlow;
 use Modelesque\App\Requests\AlbumRequests;
 use Modelesque\App\Requests\ArtistRequests;
@@ -24,7 +24,7 @@ interface SpotifyClientInterface
      *
      * @return AlbumRequests
      * @throws ConnectionException
-     * @throws PKCEAuthorizationRequiredException
+     * @throws AuthCodeFlowRequiredException
      */
     public function albums(): AlbumRequests;
 
@@ -33,7 +33,7 @@ interface SpotifyClientInterface
      *
      * @return ArtistRequests
      * @throws ConnectionException
-     * @throws PKCEAuthorizationRequiredException
+     * @throws AuthCodeFlowRequiredException
      */
     public function artists(): ArtistRequests;
 
@@ -42,7 +42,7 @@ interface SpotifyClientInterface
      *
      * @return PlaylistRequests
      * @throws ConnectionException
-     * @throws PKCEAuthorizationRequiredException
+     * @throws AuthCodeFlowRequiredException
      */
     public function playlists(): PlaylistRequests;
 
@@ -51,7 +51,7 @@ interface SpotifyClientInterface
      *
      * @return TrackRequests
      * @throws ConnectionException
-     * @throws PKCEAuthorizationRequiredException
+     * @throws AuthCodeFlowRequiredException
      */
     public function tracks(): TrackRequests;
 }

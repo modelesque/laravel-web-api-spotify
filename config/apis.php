@@ -11,17 +11,18 @@ $cc = ApiTokenGrantType::CLIENT_CREDENTIALS->value;
 return [
     'providers' => [
         'spotify' => [
-            'name' => 'Spotify',
-            'base_url' => 'https://api.spotify.com/v1/',
             'base_auth_url' => 'https://accounts.spotify.com/authorize',
-            'token_url' => 'https://accounts.spotify.com/api/token',
-            'redirect_uri' => 'pkce-auth-redirect',
-            'default_account' => $public,
-            'default_grant_type' => $pkce,
+            'base_url' => 'https://api.spotify.com/v1/',
             'client_id' => env('SPOTIFY_CLIENT_ID'),
             'client_secret' => env('SPOTIFY_CLIENT_SECRET'),
-            'user_id' => env('SPOTIFY_USER_ID'),
+            'default_account' => $public,
+            'default_grant_type' => $pkce,
+            'market' => 'DE',
+            'name' => 'Spotify',
+            'redirect_uri' => 'pkce-auth-redirect',
             'scope' => [],
+            'token_url' => 'https://accounts.spotify.com/api/token',
+            'user_id' => env('SPOTIFY_USER_ID'),
         ],
     ],
 ];
