@@ -3,10 +3,10 @@
 namespace Modelesque\App\Requests;
 
 use Illuminate\Http\Client\ConnectionException;
+use Modelesque\Api\Helpers\SpotifyConfig;
+use Modelesque\Api\Helpers\SpotifyError;
 use Modelesque\ApiTokenManager\Abstracts\BaseRequest;
 use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
-use SpotifyConfig;
-use SpotifyError;
 
 /**
  * REST requests from Spotify's Web API regarding albums.

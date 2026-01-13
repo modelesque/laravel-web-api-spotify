@@ -1,5 +1,7 @@
 <?php
 
+namespace Modelesque\Api\Helpers;
+
 use JetBrains\PhpStorm\Pure;
 use Modelesque\ApiTokenManager\Helpers\ErrorMessage;
 

@@ -5,20 +5,18 @@ namespace Modelesque\Api;
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
 use Modelesque\ApiTokenManager\Abstracts\BaseClient;
-use Modelesque\ApiTokenManager\Contracts\AuthCodeTokenProviderInterface;
-use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Exceptions\AuthCodeFlowRequiredException;
+use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Factories\ApiClientFactory;
+use Modelesque\ApiTokenManager\Traits\HandlesAuthCodeFlow;
 use Modelesque\Api\Contracts\SpotifyClientInterface;
+use Modelesque\Api\Helpers\SpotifyConfig;
 use Modelesque\App\Requests\AlbumRequests;
 use Modelesque\App\Requests\ArtistRequests;
-use Modelesque\ApiTokenManager\Traits\HandlesAuthCodeFlow;
 use Modelesque\App\Requests\PlaylistRequests;
 use Modelesque\App\Requests\TrackRequests;
-use SpotifyConfig;
 
 /**
- * @method AuthCodeTokenProviderInterface pkce()
  * @mixin HandlesAuthCodeFlow
  */
 class SpotifyClient extends BaseClient implements SpotifyClientInterface

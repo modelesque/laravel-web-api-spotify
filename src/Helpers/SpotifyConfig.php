@@ -1,5 +1,7 @@
 <?php
 
+namespace Modelesque\Api\Helpers;
+
 use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Helpers\Config;
 

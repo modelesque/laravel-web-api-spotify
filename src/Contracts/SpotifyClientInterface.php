@@ -4,8 +4,8 @@ namespace Modelesque\Api\Contracts;
 
 use Illuminate\Http\Client\ConnectionException;
 use Modelesque\Api\SpotifyClient;
-use Modelesque\ApiTokenManager\Contracts\AuthCodeTokenProviderInterface;
 use Modelesque\ApiTokenManager\Exceptions\AuthCodeFlowRequiredException;
+use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Traits\HandlesAuthCodeFlow;
 use Modelesque\App\Requests\AlbumRequests;
 use Modelesque\App\Requests\ArtistRequests;
@@ -13,7 +13,6 @@ use Modelesque\App\Requests\PlaylistRequests;
 use Modelesque\App\Requests\TrackRequests;
 
 /**
- * @method AuthCodeTokenProviderInterface pkce()
  * @mixin HandlesAuthCodeFlow
  * @see SpotifyClient
  */
@@ -25,6 +24,7 @@ interface SpotifyClientInterface
      * @return AlbumRequests
      * @throws ConnectionException
      * @throws AuthCodeFlowRequiredException
+     * @throws InvalidConfigException
      */
     public function albums(): AlbumRequests;
 
@@ -34,6 +34,7 @@ interface SpotifyClientInterface
      * @return ArtistRequests
      * @throws ConnectionException
      * @throws AuthCodeFlowRequiredException
+     * @throws InvalidConfigException
      */
     public function artists(): ArtistRequests;
 
@@ -43,6 +44,7 @@ interface SpotifyClientInterface
      * @return PlaylistRequests
      * @throws ConnectionException
      * @throws AuthCodeFlowRequiredException
+     * @throws InvalidConfigException
      */
     public function playlists(): PlaylistRequests;
 
@@ -52,6 +54,7 @@ interface SpotifyClientInterface
      * @return TrackRequests
      * @throws ConnectionException
      * @throws AuthCodeFlowRequiredException
+     * @throws InvalidConfigException
      */
     public function tracks(): TrackRequests;
 }

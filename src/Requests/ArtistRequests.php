@@ -4,7 +4,7 @@ namespace Modelesque\App\Requests;
 
 use Illuminate\Http\Client\ConnectionException;
 use Modelesque\ApiTokenManager\Abstracts\BaseRequest;
-use SpotifyError;
+use Modelesque\Api\Helpers\SpotifyError;
 
 /**
  * REST requests from Spotify's Web API regarding artists.
