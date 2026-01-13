@@ -9,8 +9,11 @@ use Modelesque\ApiTokenManager\Contracts\PKCEAuthCodeFlowInterface;
 use Modelesque\ApiTokenManager\Exceptions\PKCEAuthorizationRequiredException;
 use Modelesque\ApiTokenManager\Factories\ApiClientFactory;
 use Modelesque\Api\Contracts\SpotifyClientInterface;
-use Modelesque\App\Requests\Artists;
+use Modelesque\App\Requests\AlbumRequests;
+use Modelesque\App\Requests\ArtistRequests;
 use Modelesque\ApiTokenManager\Traits\HandlesPKCEAuthCodeFlow;
+use Modelesque\App\Requests\PlaylistRequests;
+use Modelesque\App\Requests\TrackRequests;
 
 /**
  * @method PKCEAuthCodeFlowInterface pkce()
@@ -44,8 +47,26 @@ class SpotifyClient extends BaseClient implements SpotifyClientInterface
     }
 
     /** @inheritdoc */
-    public function artists(): Artists
+    public function albums(): AlbumRequests
     {
-        return new Artists($this->make());
+        return new AlbumRequests($this->make());
+    }
+
+    /** @inheritdoc */
+    public function artists(): ArtistRequests
+    {
+        return new ArtistRequests($this->make());
+    }
+
+    /** @inheritdoc */
+    public function playlists(): PlaylistRequests
+    {
+        return new PlaylistRequests($this->make());
+    }
+
+    /** @inheritdoc */
+    public function tracks(): TrackRequests
+    {
+        return new TrackRequests($this->make());
     }
 }
