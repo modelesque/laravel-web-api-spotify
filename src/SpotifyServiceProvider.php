@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Modelesque\Api\Contracts\SpotifyClientInterface;
 use Modelesque\Api\Helpers\SpotifyConfig;
+use Modelesque\Api\Services\RequestsService;
 use Modelesque\ApiTokenManager\Events\ConstructAuthUrlParamsEvent;
 use Modelesque\ApiTokenManager\Services\Providers\AuthCodeTokenProvider;
 
@@ -14,6 +15,7 @@ class SpotifyServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(SpotifyClient::class);
+        $this->app->singleton(RequestsService::class);
         $this->app->bind(SpotifyClientInterface::class, SpotifyClient::class);
     }
 
