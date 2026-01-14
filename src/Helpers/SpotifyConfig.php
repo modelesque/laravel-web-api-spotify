@@ -10,24 +10,24 @@ class SpotifyConfig
     public const KEY = 'spotify';
 
     /**
-     * @param null $key
-     * @param null $sub
+     * @param string $key
+     * @param string $sub
      * @param null $default
      * @return mixed
      * @throws InvalidConfigException
      */
-    public static function get($key = null, $sub = null, $default = null): mixed
+    public static function get(string $key = '', string $sub = '', $default = null): mixed
     {
         return Config::get(self::KEY, $key, $sub, $default);
     }
 
     /**
-     * @param null $key
-     * @param null $sub
+     * @param string $key
+     * @param string $sub
      * @return mixed
      * @throws InvalidConfigException
      */
-    public static function getRequired($key = null, $sub = null): mixed
+    public static function getRequired(string $key = '', string $sub = ''): mixed
     {
         return Config::getRequired(self::KEY, $key, $sub);
     }
