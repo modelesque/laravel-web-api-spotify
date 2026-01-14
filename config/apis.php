@@ -21,6 +21,7 @@ return [
             'name' => 'Spotify',
             'redirect_uri' => 'pkce-auth-redirect',
             'scope' => [],
+            'show_dialog' => false,
             'token_url' => 'https://accounts.spotify.com/api/token',
             'user_id' => env('SPOTIFY_USER_ID'),
             'uses_pkce' => false,
