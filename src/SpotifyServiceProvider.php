@@ -14,13 +14,22 @@ class SpotifyServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->singleton(SpotifyClient::class);
         $this->app->singleton(RequestsService::class);
-        $this->app->bind(SpotifyClientInterface::class, SpotifyClient::class);
+        $this->app->singleton(SpotifyClient::class);
+        $this->app->alias(SpotifyClient::class, SpotifyClientInterface::class);
+
+        // provide a fallback config that can be overwritten by hosts using this package
+        $this->mergeConfigFrom(__DIR__ . '/../config/apis.php', 'apis');
     }
 
     public function boot(): void
     {
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../config/apis.php' => config_path('apis.php'),
+            ], 'config');
+        }
+
         /**
          * Add additional query params to the OAuth2 authorize URL.
          * @see AuthCodeTokenProvider::authorizeUrlParams()
