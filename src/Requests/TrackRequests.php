@@ -1,27 +1,32 @@
 <?php
 
-namespace Modelesque\App\Requests;
+namespace Modelesque\Api\Spotify\Requests;
 
 use Illuminate\Http\Client\ConnectionException;
-use Modelesque\ApiTokenManager\Abstracts\BaseRequest;
-use Modelesque\Api\Helpers\SpotifyError;
+use Modelesque\Api\Spotify\Helpers\SpotifyError;
+use Modelesque\Api\Spotify\Abstracts\Request;
 
 /**
  * REST requests from Spotify's Web API regarding tracks.
  */
-class TrackRequests extends BaseRequest
+class TrackRequests extends Request
 {
     /**
-     * Get a track by its ID.
+     * Get tracks by their IDs.
      *
-     * @param string $id
+     * @param string|array $ids
+     * @param string|null $market
      * @return mixed
      * @throws ConnectionException
      * @see https://developer.spotify.com/documentation/web-api/reference/get-track
-     * @see SpotifyError::getTrack()
+     * @see https://developer.spotify.com/documentation/web-api/reference/get-several-tracks
+     * @see SpotifyError::getTracks()
      */
-    public function get(string $id): mixed
+    public function get(string|array $ids, ?string $market = null): mixed
     {
-        return $this->client->get('tracks/' . $id);
+        return $this->client->get(
+            'tracks/' . $this->requests->formatIds($ids),
+            $this->requests->formatParams(['market' => $market])
+        );
     }
 }

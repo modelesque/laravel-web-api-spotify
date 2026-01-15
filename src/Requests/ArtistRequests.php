@@ -1,27 +1,28 @@
 <?php
 
-namespace Modelesque\App\Requests;
+namespace Modelesque\Api\Spotify\Requests;
 
 use Illuminate\Http\Client\ConnectionException;
-use Modelesque\ApiTokenManager\Abstracts\BaseRequest;
-use Modelesque\Api\Helpers\SpotifyError;
+use Modelesque\Api\Spotify\Helpers\SpotifyError;
+use Modelesque\Api\Spotify\Abstracts\Request;
 
 /**
  * REST requests from Spotify's Web API regarding artists.
  */
-class ArtistRequests extends BaseRequest
+class ArtistRequests extends Request
 {
     /**
-     * Get an artist by their ID.
+     * Get artists by their IDs.
      *
-     * @param string $id
+     * @param string|array $ids
      * @return mixed
      * @throws ConnectionException
      * @see https://developer.spotify.com/documentation/web-api/reference/get-an-artist
-     * @see SpotifyError::getArtist()
+     * @see https://developer.spotify.com/documentation/web-api/reference/get-multiple-artists
+     * @see SpotifyError::getArtists()
      */
-    public function get(string $id): mixed
+    public function get(string|array $ids): mixed
     {
-        return $this->client->get('artists/' . $id);
+        return $this->client->get('artists/' . $this->requests->formatIds($ids, 50));
     }
 }

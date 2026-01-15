@@ -1,16 +1,16 @@
 <?php
 
-namespace Modelesque\Api\Contracts;
+namespace Modelesque\Api\Spotify\Contracts;
 
 use Illuminate\Http\Client\ConnectionException;
-use Modelesque\Api\SpotifyClient;
+use Modelesque\Api\Spotify\SpotifyClient;
 use Modelesque\ApiTokenManager\Exceptions\AuthCodeFlowRequiredException;
 use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Traits\HandlesAuthCodeFlow;
-use Modelesque\App\Requests\AlbumRequests;
-use Modelesque\App\Requests\ArtistRequests;
-use Modelesque\App\Requests\PlaylistRequests;
-use Modelesque\App\Requests\TrackRequests;
+use Modelesque\Api\Spotify\Requests\AlbumRequests;
+use Modelesque\Api\Spotify\Requests\ArtistRequests;
+use Modelesque\Api\Spotify\Requests\PlaylistRequests;
+use Modelesque\Api\Spotify\Requests\TrackRequests;
 
 /**
  * @mixin HandlesAuthCodeFlow

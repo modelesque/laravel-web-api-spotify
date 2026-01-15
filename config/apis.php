@@ -1,7 +1,14 @@
 <?php
 
+use Modelesque\Api\Enums\SpotifyScope;
 use Modelesque\ApiTokenManager\Enums\ApiAccount;
 use Modelesque\ApiTokenManager\Enums\ApiTokenGrantType;
+
+/**
+ * @see ApiAccount
+ * @see ApiTokenGrantType
+ * @see SpotifyScope
+ */
 
 $public = ApiAccount::PUBLIC->value;
 $private = ApiAccount::PRIVATE->value;
@@ -21,6 +28,7 @@ return [
             'name' => 'Spotify',
             'redirect_uri' => 'pkce-auth-redirect',
             'scope' => [],
+            'show_dialog' => false,
             'token_url' => 'https://accounts.spotify.com/api/token',
             'user_id' => env('SPOTIFY_USER_ID'),
             'uses_pkce' => false,
