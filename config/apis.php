@@ -1,7 +1,14 @@
 <?php
 
+use Modelesque\Api\Enums\SpotifyScope;
 use Modelesque\ApiTokenManager\Enums\ApiAccount;
 use Modelesque\ApiTokenManager\Enums\ApiTokenGrantType;
+
+/**
+ * @see ApiAccount
+ * @see ApiTokenGrantType
+ * @see SpotifyScope
+ */
 
 $public = ApiAccount::PUBLIC->value;
 $private = ApiAccount::PRIVATE->value;
