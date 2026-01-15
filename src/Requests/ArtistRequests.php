@@ -1,10 +1,10 @@
 <?php
 
-namespace Modelesque\App\Requests;
+namespace Modelesque\Api\Spotify\Requests;
 
 use Illuminate\Http\Client\ConnectionException;
-use Modelesque\Api\Helpers\SpotifyError;
-use Modelesque\App\Abstracts\Request;
+use Modelesque\Api\Spotify\Helpers\SpotifyError;
+use Modelesque\Api\Spotify\Abstracts\Request;
 
 /**
  * REST requests from Spotify's Web API regarding artists.

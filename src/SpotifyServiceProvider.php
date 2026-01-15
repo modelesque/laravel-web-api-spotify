@@ -1,12 +1,12 @@
 <?php
 
-namespace Modelesque\Api;
+namespace Modelesque\Api\Spotify;
 
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
-use Modelesque\Api\Contracts\SpotifyClientInterface;
-use Modelesque\Api\Helpers\SpotifyConfig;
-use Modelesque\Api\Services\RequestsService;
+use Modelesque\Api\Spotify\Contracts\SpotifyClientInterface;
+use Modelesque\Api\Spotify\Helpers\SpotifyConfig;
+use Modelesque\Api\Spotify\Services\RequestsService;
 use Modelesque\ApiTokenManager\Events\ConstructAuthUrlParamsEvent;
 use Modelesque\ApiTokenManager\Services\Providers\AuthCodeTokenProvider;
 

@@ -1,9 +1,9 @@
 <?php
 
-namespace Modelesque\App\Abstracts;
+namespace Modelesque\Api\Spotify\Abstracts;
 
 use Illuminate\Http\Client\PendingRequest;
-use Modelesque\Api\Services\RequestsService;
+use Modelesque\Api\Spotify\Services\RequestsService;
 use Modelesque\ApiTokenManager\Abstracts\BaseRequest;
 
 abstract class Request extends BaseRequest

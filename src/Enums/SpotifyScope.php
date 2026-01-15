@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelesque\Api\Enums;
+namespace Modelesque\Api\Spotify\Enums;
 
 enum SpotifyScope: string
 {

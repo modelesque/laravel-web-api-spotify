@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelesque\Api\Helpers;
+namespace Modelesque\Api\Spotify\Helpers;
 
 use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Helpers\Config;

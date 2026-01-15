@@ -28,18 +28,18 @@
   ],
   "autoload": {
     "psr-4": {
-      "Modelesque\\Api\\": "src/"
+      "Modelesque\\Api\\Spotify\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Modelesque\\Api\\Tests\\": "tests/"
+      "Modelesque\\Api\\Spotify\\Tests\\": "tests/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Modelesque\\Api\\SpotifyServiceProvider"
+        "Modelesque\\Api\\Spotify\\SpotifyServiceProvider"
       ]
     }
   },

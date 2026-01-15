@@ -1,9 +1,9 @@
 <?php
 
-namespace Modelesque\Api\Services;
+namespace Modelesque\Api\Spotify\Services;
 
 use JetBrains\PhpStorm\Pure;
-use Modelesque\Api\Helpers\SpotifyConfig;
+use Modelesque\Api\Spotify\Helpers\SpotifyConfig;
 use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 
 class RequestsService

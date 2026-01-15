@@ -1,10 +1,10 @@
 <?php /** @noinspection ALL */
 
-namespace Modelesque\Api\Helpers;
+namespace Modelesque\Api\Spotify\Helpers;
 
 use JetBrains\PhpStorm\Pure;
 use Modelesque\ApiTokenManager\Helpers\ErrorMessage;
-use Modelesque\App\Requests\AlbumRequests;
+use Modelesque\Api\Spotify\Requests\AlbumRequests;
 
 class SpotifyError
 {

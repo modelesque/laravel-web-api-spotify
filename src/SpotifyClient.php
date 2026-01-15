@@ -1,6 +1,6 @@
 <?php
 
-namespace Modelesque\Api;
+namespace Modelesque\Api\Spotify;
 
 use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Http\Client\PendingRequest;
@@ -9,12 +9,12 @@ use Modelesque\ApiTokenManager\Exceptions\AuthCodeFlowRequiredException;
 use Modelesque\ApiTokenManager\Exceptions\InvalidConfigException;
 use Modelesque\ApiTokenManager\Factories\ApiClientFactory;
 use Modelesque\ApiTokenManager\Traits\HandlesAuthCodeFlow;
-use Modelesque\Api\Contracts\SpotifyClientInterface;
-use Modelesque\Api\Helpers\SpotifyConfig;
-use Modelesque\App\Requests\AlbumRequests;
-use Modelesque\App\Requests\ArtistRequests;
-use Modelesque\App\Requests\PlaylistRequests;
-use Modelesque\App\Requests\TrackRequests;
+use Modelesque\Api\Spotify\Contracts\SpotifyClientInterface;
+use Modelesque\Api\Spotify\Helpers\SpotifyConfig;
+use Modelesque\Api\Spotify\Requests\AlbumRequests;
+use Modelesque\Api\Spotify\Requests\ArtistRequests;
+use Modelesque\Api\Spotify\Requests\PlaylistRequests;
+use Modelesque\Api\Spotify\Requests\TrackRequests;
 
 /**
  * @mixin HandlesAuthCodeFlow
