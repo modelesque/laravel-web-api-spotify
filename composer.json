@@ -10,12 +10,14 @@
     "illuminate/database": "^12.46",
     "illuminate/http": "^12.46",
     "illuminate/support": "^12.46",
-    "modelesque/laravel-api-token-manager": "^1.0"
+    "modelesque/laravel-api-token-manager": "@dev"
   },
   "require-dev": {
     "barryvdh/laravel-ide-helper": "^3.6",
     "mockery/mockery": "^1.6",
-    "pestphp/pest": "^4.3"
+    "orchestra/testbench": "^10.9",
+    "pestphp/pest": "^4.3",
+    "pestphp/pest-plugin-laravel": "^4.0"
   },
   "repositories": [
     {
